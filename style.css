@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  /* flex布局 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 设置最小高度 */
+  min-height: 100vh;
+  /* 背景渐变 */
+  background: linear-gradient(45deg, #fbda6a, #ff5acd);
+}
+/* 整体盒子 */
+.card {
+  /* 定位 */
+  position: relative;
+  /* 尺寸、 */
+  width: 350px;
+  height: 190px;
+  /* height: 450px; */
+  /* 颜色 */
+  background-color: #fff;
+  /* 圆角 */
+  border-radius: 20px;
+  /* 盒子阴影 */
+  box-shadow: 0 35px 88px rgba(0, 0, 0, 0.15);
+  /* 设置过渡时间 */
+  transition: 0.5s;
+}
+/* 经过时盒子放大 */
+.card:hover {
+  height: 450px;
+}
+/* 头像区域 */
+.imgBx {
+  /* 定位 */
+  position: absolute;
+  left: 50%;
+  top: -50px;
+  /* 设置动画开始位置 */
+  transform: translateX(-50%);
+  /* 尺寸 */
+  width: 150px;
+  height: 150px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+  /* 设置超出内容隐藏 */
+  overflow: hidden;
+  /* 过渡时间 */
+  transition: 0.5s;
+}
+/* 鼠标经过时图片放大 */
+.card:hover .imgBx {
+  height: 250px;
+  width: 250px;
+}
+/* 设置图片样式 */
+.imgBx img {
+  /* 定位 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* 尺寸和父盒子一样 */
+  width: 100%;
+  height: 100%;
+  /* 图片尺寸自适应 */
+  /* 被替换的内容在保持其宽高比的同
+  时填充元素的整个内容框。如果对象的宽高比与内容框不相匹配，
+  该对象将被剪裁以适应内容框 */
+  object-fit: cover;
+}
+/* 内容模块 */
+.card .content {
+  /* 定位 */
+  position: absolute;
+  /* 大小与父盒子相同 */
+  width: 100%;
+  height: 100%;
+  /* 布局 */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+/* 文字细节1 */
+.card .content .details {
+  /* 内边距 */
+  padding: 40px;
+  /* 居中 */
+  text-align: center;
+  width: 100%;
+  /* 设置过渡 */
+  transition: 0.5s;
+  /* 调整位置 */
+  transform: translateY(150px);
+}
+/* 盒子悬停时，文字回到原来的位置 */
+.card:hover .content .details {
+  transform: translateY(0px);
+}
+/* 文字细节2 */
+.card .content .details h2 {
+  font-size: 1.25em;
+  font-weight: 600;
+  color: #555;
+  line-height: 1.2em;
+}
+/* 文字细节3 */
+.card .content .details h2 span {
+  /* 文字大小粗细 */
+  font-size: 0.75em;
+  font-weight: 500;
+  /* 不透明度 */
+  opacity: 0.5;
+}
+/* 个人数据模块 */
+.card .content .details .data {
+  /* 布局 */
+  display: flex;
+  justify-content: space-between;
+  /* 边距 */
+  margin: 20px 0;
+}
+/* 文字样式 */
+.card .content .details .data h3 {
+  font: 1em;
+  color: #555;
+  line-height: 1.2em;
+  font-weight: 600;
+}
+.card .content .details .data h3 span {
+  font-size: 0.85em;
+  font-weight: 400;
+  /* 透明度  */
+  opacity: 0.5;
+}
+.card .content .details .actionBtn {
+  display: flex;
+  justify-content: space-between;
+  /* gap:20px; */
+}
+/* 按钮样式 */
+.card .content .details .actionBtn button {
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: #ff5f95;
+  color: #fff;
+  /* 鼠标样式 */
+  cursor: pointer;
+}
+/* 选择第二个按钮 */
+.card .content .details .actionBtn button:nth-child(2) {
+  border: 1px solid #999;
+  color: #999;
+  background-color: #fff;
+}
